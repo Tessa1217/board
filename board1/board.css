@@ -1,0 +1,71 @@
+body {
+    width: 100%;
+}
+
+.container {
+    margin: 0 auto;
+    width: 95%;
+}
+
+table {
+    table-layout: fixed; 
+    width: 100%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+
+table th, td {
+    padding: 10px;
+}
+
+thead {
+    width: 100%;
+    background: #eee;
+}
+
+tbody {
+    width: 100%;
+}
+
+tbody td:nth-of-type(2) {
+    text-align: left;
+}
+
+tbody td:nth-of-type(2) a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+button {
+    padding: 7px 10px;
+    color: white;
+    border: none;
+}
+
+.grey-button {
+    background: #555;
+}
+
+.blue-button {
+    background: #003458;
+}
+
+.search input, .search select {
+    height: 20px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.top-margin {
+    margin-top: 1%;
+}
+

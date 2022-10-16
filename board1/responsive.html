@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <div class="acordian">
+        <div class="acordian-title">
+            <div class="left">
+                <span class="icon green">Q</span>
+                <span class="title">타이틀입니다. 타이틀입니다.</span>
+            </div>
+            <div class="right">
+                <button class="btn right" type="button">∧</button>
+            </div>
+        </div>
+        <div class="acordian-answer">
+            <p><span class="icon red">A</span></p> 
+            <p>안녕하십니까. 현행 개인정보 취급 방침을 아래와 같이 개정하여 공지합니다. 
+                회원 여러분께서는 변경 내용을 꼭 확인하시고 서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+    </div>
+    <div class="acordian">
+        <div class="acordian-title">
+            <div class="left">
+                <span class="icon green">Q</span>
+                <span class="title">타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.ㅍ</span>
+            </div>
+            <div class="right">
+                <button class="right btn" type="button">∧</button>
+            </div>
+        </div>
+        <div class="acordian-answer">
+            <p><span class="icon red">A</span></p> 
+            <p>안녕하십니까. 예시 서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+    </div>
+    <div class="acordian">
+        <div class="acordian-title">
+            <div class="left">
+                <span class="icon green">Q</span>
+                <span class="title">타이틀 예시입니다.</span>
+            </div>
+            <div class="right">
+                <button class="right btn" type="button">∧</button>
+            </div>
+        </div>
+        <div class="acordian-answer">
+            <p><span class="icon red">A</span></p> 
+            <p>안녕하십니까. 예시 서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+    </div>
+    <div class="acordian">
+        <div class="acordian-title">
+            <div class="left">
+                <span class="icon green">Q</span>
+                <span class="title">타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.타이틀 예시입니다.ㅍ</span>
+            </div>
+            <div class="right">
+                <button class="right btn" type="button">∧</button>
+            </div>
+        </div>
+        <div class="acordian-answer">
+            <p><span class="icon red">A</span></p> 
+            <p>안녕하십니까. 예시 서비스 이용에 차질이 없으시기 바랍니다.</p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $(".btn").on("click", function() {
+                $(".acordian-answer").each((idx, val) => {
+                    $(val).removeClass("display");
+                });
+                $(".btn").not($(this)).each((idx, val) => {
+                    $(val).text("∧");
+                });
+                if ($(this).text() == "∧") {
+                    $(this).text("∨");
+                    $(this).parents(".acordian")
+                    .find(".acordian-answer")
+                    .addClass("display");
+                } else if ($(this).text() == "∨") {
+                    $(this).text("∧");
+                    $(this).parents(".acordian")
+                    .find(".acordian-answer")
+                    .removeClass("display");
+                }
+            })
+        })
+    </script>   
+</body>
+</html>

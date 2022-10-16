@@ -1,0 +1,62 @@
+.acordian {
+    width: 80%;
+    margin: 0 auto;
+}
+
+dt, dd {
+    padding: 2%;
+    line-height: 30px;
+}
+
+dt p {
+    display: inline-block;
+}
+
+dt p:first-of-type {
+    width: 90%;
+}
+
+dt p:last-of-type {
+    width: 10%;
+    text-align: right;
+    margin-top: 0;
+    vertical-align: top;
+}
+
+dd {
+    display: none;
+    margin: 0;
+    background-color: rgba(245, 183, 177, 0.15);
+    padding: 1% 4%;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.icon {
+    padding: 0.4% 0.8%;
+    border-radius: 100%;
+}
+.green {
+    background-color : #76D7C4;
+}
+
+.red {
+    background-color : #D98880;
+}
+
+.right {
+    float: right;
+}
+
+.block {
+    display: block;
+}
+
+dt button {
+    border: 3px solid #ddd;
+    background-color: white;
+    color: #ddd;
+    font-weight: bold;
+    border-radius: 100%;
+    font-size: x-large;
+}

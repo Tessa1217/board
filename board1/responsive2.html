@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Document</title>
+    <link href="responsive2.css" rel="stylesheet">
+</head>
+<body>
+    <div class="acordian">
+        <div>
+            <dl>
+                <dt><p><span class="icon green">Q</span>
+                    <span> 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다.</span></p><p><button type="button">∧</button></p></dt>
+                <dd><p><span class="icon red">A</span></p>
+                    <p>안녕하십니까. 현행 개인정보 취급 방침을 아래와 같이 개정하여 공지합니다. 
+                    회원 여러분께서는 변경 내용을 꼭 확인하시고 서비스 이용에 차질이 없으시기 바랍니다.</p></dd>
+            </dl>
+        </div>
+        <div>
+            <dl>
+                <dt><p><span class="icon green">Q</span>
+                    <span> 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다.</span></p><p><button type="button">∧</button></p></dt>
+                <dd><p><span class="icon red">A</span></p>
+                    <p>안녕하십니까. 현행 개인정보 취급 방침을 아래와 같이 개정하여 공지합니다. 
+                    회원 여러분께서는 변경 내용을 꼭 확인하시고 서비스 이용에 차질이 없으시기 바랍니다.</p></dd>
+            </dl>
+        </div>
+        <div>
+            <dl>
+                <dt><p><span class="icon green">Q</span>
+                    <span> 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다. 타이틀입니다.</span></p><p><button type="button">∧</button></p></dt>
+                <dd><p><span class="icon red">A</span></p>
+                    <p>안녕하십니까. 현행 개인정보 취급 방침을 아래와 같이 개정하여 공지합니다. 
+                    회원 여러분께서는 변경 내용을 꼭 확인하시고 서비스 이용에 차질이 없으시기 바랍니다.</p></dd>
+            </dl>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("dt button").on("click", function() {
+                $("dd").each((idx, val) => {
+                    $(val).css({"display": "none"});
+                })
+                $("dt button").not($(this)).each((idx, val) => {
+                    $(val).text("∧");
+                })
+
+                if ($(this).text() == "∧") {
+                    $(this).text("∨");
+                    $(this).parents("dl").find("dd").css({"display":"block"});
+                } else if ($(this).text() == "∨") {
+                    $(this).text("∧");
+                    $(this).parents("dl").find("dd").css({"display":"none"});
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

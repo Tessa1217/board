@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Document</title>
+    <style>
+        .container {
+            border: 1px solid black;
+        }
+        .col-sm-12, .col-sm-10 {
+            border: 1px solid blue;
+        }
+        [class*=col-sm] {
+            border: 1px solid black;
+         
+        }
+        .col-lg-10 {
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>게시글 상세보기</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <h4>게시글 제목</h4>
+                            </div>
+                            <div class="col-md-12">
+                                <textarea rows="10">게시글 내용들...</textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-md">목록</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end col-lg-10">
+                <div class="col-lg-12">
+                    <h4>댓글 달기</h4>
+                    <div>
+                        <textarea></textarea>
+                    </div>
+                </div>
+           
+                    <div class="col justify-content-end justify-items-end">
+                        <div class="col-12 col-sm-12">
+                            <span>작성자: </span>
+                            <div>댓글을 달았음</div>
+                        </div>
+                        <div class="w-100 d-none d-md-block"></div>
+                        <div class="col-11 col-sm-11">
+                            <span>작성자: </span>
+                            <div>댓글에 댓글을 달았음</div>
+                        </div>
+                        <div class="w-100 d-none d-md-block"></div>
+                        <div class="col-10 col-sm-10">
+                            <span>작성자: </span>
+                            <div>댓글에 댓글을 달았음</div>
+                        </div>
+                    </div>
+           
+            </div>
+        </div>
+</body>
+</html>

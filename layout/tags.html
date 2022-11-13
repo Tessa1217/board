@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <body>
+    <div class="">
+      <input type="text" placeholder="태그를 입력해주세요." name="tags" />
+    </div>
+    <div class="border border-light bg-light">
+      <ul class="tagList list-group list-group-horizontal"></ul>
+    </div>
+  </body>
+  <script>
+    let queryString = [];
+    let tagCnt = 0;
+    $(document).ready(function () {
+      $("input[name='tags").on("keyup", function (e) {
+        if (e.keyCode == 32) {
+          if (tagCnt > 4) {
+            alert("태그는 최대 5개까지만 입력 가능합니다.");
+            $(this).val("");
+            return;
+          }
+          if ($(this).val() == "") {
+            alert("태그 내용을 입력해주세요.");
+            return;
+          }
+
+          let span = $("<span/>")
+            .text("#" + $(this).val().trim())
+            .attr("class", "badge rounded-pill bg-primary text-white p-2");
+          let button = $("<button/>")
+            .attr("class", "btn-sm btn-close")
+            .attr("aria-label", "Close")
+            .attr("type", "button")
+            .on("click", function () {
+              let removeIdx = $(this).parents("li").attr("id").substring(4);
+              queryString.splice(removeIdx, 1);
+              $(this).parents("li").remove();
+            });
+
+          let idx = tagCnt;
+
+          let li = $("<li/>")
+            .attr(
+              "class",
+              "list-group-item border-light bg-light d-flex align-items-center"
+            )
+            .attr("id", "tag-" + idx)
+            .append(button)
+            .append(span)
+            .appendTo(".tagList");
+
+          queryString.push($(this).val().trim());
+          tagCnt++;
+
+          $(this).val("");
+        }
+      });
+    });
+  </script>
+</html>

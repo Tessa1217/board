@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="sortable">
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="1" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="2" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="3" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="4" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="5" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="6" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6
+      </li>
+      <li class="ui-state-default">
+        <input type="text" name="menuOrder" value="7" />
+        <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7
+      </li>
+    </ul>
+    <button type="button" onclick="changeIdx()">순서 변경 완료</button>
+  </body>
+  <script>
+    $(function () {
+      $("#sortable").sortable();
+    });
+
+    function changeIdx() {
+      $("input[name='menuOrder").each((idx, val) => {
+        $(val).val(idx + 1);
+      });
+    }
+  </script>
+</html>

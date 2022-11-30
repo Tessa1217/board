@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["bar"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      let jsonData = [
+        {
+          MenuNo: 1,
+          year_1: 50,
+          year_2: 40,
+          year_3: 10,
+        },
+        {
+          MenuNo: 2,
+          year_1: 50,
+          year_2: 40,
+          year_3: 10,
+        },
+        {
+          MenuNo: 3,
+          year_1: 50,
+          year_2: 40,
+          year_3: 10,
+        },
+        {
+          MenuNo: 4,
+          year_1: 50,
+          year_2: 40,
+          year_3: 10,
+        },
+      ];
+      function drawChart() {
+        console.log(JSON.stringify(jsonData));
+        var data = new google.visualization.DataTable();
+        let fieldArray = [];
+        for (let i = 0; i < jsonData.length; i++) {
+          if (i == 0) {
+            for (let field of Object.keys(jsonData[i])) {
+              data.addColumn("string", field);
+              fieldArray.push(field);
+            }
+          }
+          data.addRow([
+            jsonData[i].field[0],
+            jsonData[i].field[1].jsonData[i].field[2],
+            jsonData[i].field[3],
+          ]);
+        }
+        for (var name of jsonData) {
+          for (var field of Object.keys(name)) {
+            console.log(field);
+          }
+        }
+
+        var options = {
+          chart: {
+            title: "연간 메뉴 접속 통계",
+            subtitle: "Menu Access Log: 2020-2022",
+          },
+          bars: "vertical", // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(
+          document.getElementById("barchart_material")
+        );
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

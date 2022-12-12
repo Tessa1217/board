@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script src="https://unpkg.com/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+    <link
+      href="https://unpkg.com/@yaireo/tagify/dist/tagify.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 태그 넣을 때 -->
+    <input type="text" id="boardTag" />
+    <!-- 기존 값 -->
+    <div>
+      <input type="text" id="boardTag2" />
+    </div>
+  </body>
+  <script>
+    let tagList = ["aaa", "bbb", "ccc", "ddd"];
+    const input = document.querySelector("input#boardTag");
+    const input2 = document.querySelector("input#boardTag2");
+    input2.value = tagList.join(", ");
+    let tagify2 = new Tagify(input2);
+    let tagify = new Tagify(input);
+    tagify.on("add", function (e, tagData) {
+      if (tagify.value.length > 5) {
+        tagify.removeTag();
+      }
+    });
+  </script>
+</html>
